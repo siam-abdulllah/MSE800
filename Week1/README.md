@@ -3,10 +3,10 @@ Description
 This project calculates the power of a number (a^b).
 
 How to Run
-python power.py
+python Power.py
 
 Example
-2^3 = 8
+4^3 = 64
 
 Screenshot
 
