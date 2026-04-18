@@ -1,4 +1,4 @@
-college_name = "Yoobee College of Creative Innovation"
+college_name = "Yoobee College of Creative Innovation."
 
 class StudentManager:
 
@@ -18,7 +18,6 @@ class StudentManager:
             self.students.append({"name": name, "age": age, "id": student_id})
 
     def display_sorted_students(self):
-        print(type(self.students))
         if not self.students:
             print("No data found.")
             return
