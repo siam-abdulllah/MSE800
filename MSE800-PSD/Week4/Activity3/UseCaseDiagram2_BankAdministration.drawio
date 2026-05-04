@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0" version="24.7.17" type="device">
+  <diagram id="bank-admin" name="Bank administration">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="d2_purpose" value="&lt;b&gt;Purpose&lt;/b&gt;&lt;br&gt;This diagram models &lt;b&gt;back-office and maintenance&lt;/b&gt; capabilities that keep the data model consistent: the &lt;i&gt;CURRENCY&lt;/i&gt; catalog and &lt;i&gt;EXCHANGE_RATE&lt;/i&gt; rows, &lt;i&gt;ACCOUNT&lt;/i&gt; lifecycle and &lt;i&gt;ACC_CUST&lt;/i&gt; links, and oversight of &lt;i&gt;TRANSACTION_LOG&lt;/i&gt; for compliance and support." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFF4CC;strokeColor=#C9A227;fontSize=11;spacing=10;spacingLeft=12;spacingTop=10;spacingRight=10;spacingBottom=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1120" height="92" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_actors_note" value="&lt;b&gt;Key actors&lt;/b&gt;&lt;br&gt;&lt;b&gt;Bank Administrator&lt;/b&gt; — staff who configure products, rates, and accounts.&lt;br&gt;&lt;b&gt;Compliance Officer&lt;/b&gt; — may review transaction patterns (read-only oversight).&lt;br&gt;&lt;b&gt;Scheduled Job&lt;/b&gt; (&amp;laquo;System&amp;raquo;) — automated actor that can refresh rate snapshots or roll effective-dated rates into the catalog." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#E8F4FC;strokeColor=#6B9BD1;fontSize=11;spacing=10;spacingLeft=12;spacingTop=10;spacingRight=10;spacingBottom=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="20" y="122" width="1120" height="92" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_boundary" value="Money Exchange System&#xa;(Operations boundary)" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacingTop=8;fillColor=#F5F0FF;strokeColor=#7B5BB5;strokeWidth=2;dashed=1;dashPattern=10 10;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="228" width="820" height="500" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_uc_curr" value="Maintain currency&#xa;catalog (CURRENCY)" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="360" y="273" width="180" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_uc_rate" value="Publish / update&#xa;exchange rates" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="273" width="170" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_uc_acc" value="Create or close&#xa;bank account" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="360" y="363" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_uc_link" value="Link / unlink customer&#xa;to account (ACC_CUST)" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="600" y="353" width="210" height="68" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_uc_log" value="Search and export&#xa;transaction log" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="360" y="463" width="180" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_uc_fix" value="Correct erroneous&#xa;transaction record" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="463" width="180" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_act_admin" value="Bank&#xa;Administrator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=default;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="343" width="45" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_act_comp" value="Compliance&#xa;Officer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=default;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="493" width="45" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_act_batch" value="Scheduled Job&#xa;(batch)&#xa;«System»" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=default;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="95" y="623" width="55" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_e_a1" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_act_admin" target="d2_uc_curr">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_e_a2" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.35;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_act_admin" target="d2_uc_rate">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_e_a3" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_act_admin" target="d2_uc_acc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_e_a4" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.55;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_act_admin" target="d2_uc_link">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_e_a5" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.7;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_act_admin" target="d2_uc_log">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_e_a6" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.85;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_act_admin" target="d2_uc_fix">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_e_c1" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_act_comp" target="d2_uc_log">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2_e_b1" value="«import / stage rates»" style="endArrow=open;endFill=0;dashed=1;html=1;dashPattern=2 4;rounded=0;exitX=1;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontSize=10;fontStyle=2;" edge="1" parent="1" source="d2_act_batch" target="d2_uc_rate">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="671"/>
+              <mxPoint x="260" y="321"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2_e_ext" value="«extend»" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontStyle=2;" edge="1" parent="1" source="d2_uc_fix" target="d2_uc_log">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
