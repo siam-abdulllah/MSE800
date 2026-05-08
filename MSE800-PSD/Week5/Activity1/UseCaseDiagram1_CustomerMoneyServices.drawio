@@ -43,6 +43,9 @@
         <mxCell id="d1_act_cust" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=default;fontColor=default;" value="Customer" vertex="1">
           <mxGeometry height="80" width="40" x="100" y="360" as="geometry" />
         </mxCell>
+        <mxCell id="d1_act_rates" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=default;fontSize=10;" value="External&#xa;Rate Provider&#xa;«System»" vertex="1">
+          <mxGeometry height="90" width="50" x="90" y="560" as="geometry" />
+        </mxCell>
         <mxCell id="d1_e1" edge="1" parent="1" source="d1_act_cust" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="d1_uc_auth">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -59,6 +62,9 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="d1_e6" edge="1" parent="1" source="d1_act_cust" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="d1_uc_prof">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_e7" edge="1" parent="1" source="d1_act_rates" style="endArrow=open;endFill=0;dashed=1;html=1;dashPattern=2 4;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontStyle=2;" target="d1_uc_quote" value="«reference rates»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="d1_e8" edge="1" parent="1" source="d1_uc_ex" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontStyle=2;" target="d1_uc_quote" value="«include»">
