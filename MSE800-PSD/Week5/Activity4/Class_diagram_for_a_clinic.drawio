@@ -1,0 +1,204 @@
+<mxfile host="app.diagrams.net" agent="GPT-5.5">
+  <diagram id="clinic-class-diagram" name="Clinic Class Diagram">
+    <mxGraphModel dx="1607" dy="1028" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;" value="Simple Clinic Class Diagram" vertex="1">
+          <mxGeometry height="40" width="440" x="330" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="patient" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacing=8;" value="&lt;b&gt;Patient&lt;/b&gt;&lt;hr&gt;- patientId&lt;br&gt;- name&lt;br&gt;- contactNumber&lt;hr&gt;+ requestAppointment()&lt;br&gt;+ payFee()&lt;br&gt;+ orderMedication()" vertex="1">
+          <mxGeometry height="160" width="220" x="80" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="clinic" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacing=8;" value="&lt;b&gt;Clinic&lt;/b&gt;&lt;hr&gt;- clinicId&lt;br&gt;- name&lt;br&gt;- address&lt;hr&gt;+ displaySlots()&lt;br&gt;+ confirmAppointment()&lt;br&gt;+ processOrder()" vertex="1">
+          <mxGeometry height="160" width="230" x="440" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="appointment" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=top;spacing=8;" value="&lt;b&gt;Appointment&lt;/b&gt;&lt;hr&gt;- appointmentId&lt;br&gt;- date&lt;br&gt;- time&lt;br&gt;- status&lt;hr&gt;+ book()&lt;br&gt;+ confirm()" vertex="1">
+          <mxGeometry height="160" width="220" x="800" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="payment" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;spacing=8;" value="&lt;b&gt;Payment&lt;/b&gt;&lt;hr&gt;- paymentId&lt;br&gt;- amount&lt;br&gt;- status&lt;hr&gt;+ makePayment()" vertex="1">
+          <mxGeometry height="130" width="210" x="810" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="prescription" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacing=8;" value="&lt;b&gt;Prescription&lt;/b&gt;&lt;hr&gt;- prescriptionId&lt;br&gt;- diagnosis&lt;br&gt;- medicine&lt;hr&gt;+ issuePrescription()" vertex="1">
+          <mxGeometry height="130" width="220" x="482" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="order" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;spacing=8;" value="&lt;b&gt;MedicationOrder&lt;/b&gt;&lt;hr&gt;- orderId&lt;br&gt;- orderDate&lt;br&gt;- status&lt;hr&gt;+ placeOrder()&lt;br&gt;+ notifyPatient()" vertex="1">
+          <mxGeometry height="140" width="220" x="80" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="doctor" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e6f2ff;strokeColor=#4a90c2;align=left;verticalAlign=top;spacing=8;" value="&lt;b&gt;Doctor&lt;/b&gt;&lt;hr&gt;- doctorId&lt;br&gt;- name&lt;br&gt;- specialization&lt;hr&gt;+ conductConsultation()&lt;br&gt;+ issuePrescription()" vertex="1">
+          <mxGeometry height="160" width="220" x="289" y="341" as="geometry" />
+        </mxCell>
+        <mxCell id="classDescriptions" parent="1" style="text;html=1;strokeColor=#999999;fillColor=#f8f9fa;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=11;fontColor=#333333;spacingLeft=12;spacingRight=12;spacingTop=10;spacingBottom=10;" value="&lt;b&gt;Class descriptions&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Patient:&lt;/b&gt; Registered client who books appointments, pays fees, and places medication orders.&lt;br&gt;&lt;br&gt;&lt;b&gt;Clinic:&lt;/b&gt; Healthcare facility that manages schedules, confirms bookings, and processes medication orders.&lt;br&gt;&lt;br&gt;&lt;b&gt;Appointment:&lt;/b&gt; Scheduled visit linking patient, doctor, and clinic resources with date, time, and status.&lt;br&gt;&lt;br&gt;&lt;b&gt;Doctor:&lt;/b&gt; Licensed clinician employed by the clinic who conducts consultations and issues prescriptions.&lt;br&gt;&lt;br&gt;&lt;b&gt;Prescription:&lt;/b&gt; Clinical authorization listing diagnosis and medication instructions after consultation.&lt;br&gt;&lt;br&gt;&lt;b&gt;Payment:&lt;/b&gt; Financial record for services rendered, tracking amount charged and payment outcome.&lt;br&gt;&lt;br&gt;&lt;b&gt;MedicationOrder:&lt;/b&gt; Tracks dispensing of prescribed medicine from placement through fulfilment and patient notification." vertex="1">
+          <mxGeometry height="280" width="980" x="60" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="ePatientClinic" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" target="clinic" value="requests appointment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m-ePatientClinic-src" connectable="0" parent="ePatientClinic" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="N" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-ePatientClinic-tgt" connectable="0" parent="ePatientClinic" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-8" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eClinicAppointment" edge="1" parent="1" source="clinic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" target="appointment" value="creates/confirms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m-eClinicAppointment-src" connectable="0" parent="eClinicAppointment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eClinicAppointment-tgt" connectable="0" parent="eClinicAppointment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-8" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ePatientAppointment" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;" target="appointment" value="books">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="90" />
+              <mxPoint x="910" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-ePatientAppointment-src" connectable="0" parent="ePatientAppointment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-ePatientAppointment-tgt" connectable="0" parent="ePatientAppointment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-8" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eAppointmentPayment" edge="1" parent="1" source="appointment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;entryX=0.47;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;" target="payment" value="requires">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="909" y="350" />
+              <mxPoint x="909" y="350" />
+            </Array>
+            <mxPoint x="900" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eAppointmentPayment-src" connectable="0" parent="eAppointmentPayment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eAppointmentPayment-tgt" connectable="0" parent="eAppointmentPayment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-8" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eAppointmentPrescription" edge="1" parent="1" source="appointment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;exitX=0.181;exitY=1.019;exitDx=0;exitDy=0;exitPerimeter=0;" target="prescription" value="after consultation">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="350" />
+              <mxPoint x="560" y="350" />
+            </Array>
+            <mxPoint x="819.95" y="340.0526315789474" as="sourcePoint" />
+            <mxPoint x="560" y="578" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eAppointmentPrescription-src" connectable="0" parent="eAppointmentPrescription" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eAppointmentPrescription-tgt" connectable="0" parent="eAppointmentPrescription" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-12" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ePrescriptionOrder" edge="1" parent="1" source="prescription" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="order" value="used for">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m-ePrescriptionOrder-src" connectable="0" parent="ePrescriptionOrder" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-ePrescriptionOrder-tgt" connectable="0" parent="ePrescriptionOrder" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-8" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ePatientOrder" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="order" value="places">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="605" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-ePatientOrder-src" connectable="0" parent="ePatientOrder" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-ePatientOrder-tgt" connectable="0" parent="ePatientOrder" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-8" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eDoctorClinic" edge="1" parent="1" source="doctor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.73;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="clinic" value="employed by">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="m-eDoctorClinic-src" connectable="0" parent="eDoctorClinic" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="N" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eDoctorClinic-tgt" connectable="0" parent="eDoctorClinic" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-8" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eDoctorAppointment" edge="1" parent="1" source="doctor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="appointment" value="conducts">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="509" y="370" />
+              <mxPoint x="965" y="370" />
+            </Array>
+            <mxPoint x="509" y="370" as="sourcePoint" />
+            <mxPoint x="960" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eDoctorAppointment-src" connectable="0" parent="eDoctorAppointment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eDoctorAppointment-tgt" connectable="0" parent="eDoctorAppointment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-8" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eDoctorPrescription" edge="1" parent="1" source="doctor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;entryX=0.873;entryY=-0.015;entryDx=0;entryDy=0;entryPerimeter=0;" target="prescription" value="issues">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="403" />
+              <mxPoint x="510" y="404" />
+              <mxPoint x="642" y="404" />
+            </Array>
+            <mxPoint x="510" y="404" as="sourcePoint" />
+            <mxPoint x="670" y="578" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eDoctorPrescription-src" connectable="0" parent="eDoctorPrescription" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">
+            <mxPoint x="6" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m-eDoctorPrescription-tgt" connectable="0" parent="eDoctorPrescription" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.88" y="-2" as="geometry">
+            <mxPoint x="-8" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
