@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net" agent="Cursor">
+  <diagram id="air-nz-inheritance" name="Air NZ Single Inheritance">
+    <mxGraphModel dx="964" dy="612" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;" value="Air New Zealand — Single Inheritance" vertex="1">
+          <mxGeometry height="36" width="400" x="225" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="flight" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Flight" vertex="1">
+          <mxGeometry height="150" width="240" x="305" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="flight-attrs" parent="flight" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="- flight_number: str&#xa;- origin: str&#xa;- destination: str&#xa;- status: str" vertex="1">
+          <mxGeometry height="68" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="flight-sep" parent="flight" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="240" y="94" as="geometry" />
+        </mxCell>
+        <mxCell id="flight-methods" parent="flight" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="+ display_details(): void&#xa;+ update_status(new_status: str): void" vertex="1">
+          <mxGeometry height="48" width="240" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="domesticFlight" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;" value="DomesticFlight" vertex="1">
+          <mxGeometry height="150" width="260" x="295" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="domestic-attrs" parent="domesticFlight" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="- domestic_region: str" vertex="1">
+          <mxGeometry height="28" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="domestic-sep" parent="domesticFlight" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="domestic-methods" parent="domesticFlight" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="+ display_details(): void&#xa;+ calculate_fare(base_fare: float): float" vertex="1">
+          <mxGeometry height="88" width="260" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="inheritance" edge="1" parent="1" source="domesticFlight" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;strokeWidth=2;strokeColor=#333333;" target="flight">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;strokeColor=#999999;fillColor=#f8f9fa;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=11;fontColor=#333333;spacingLeft=12;spacingRight=12;spacingTop=10;spacingBottom=10;" value="DomesticFlight inherits all attributes and methods from Flight.&lt;br&gt;It adds domestic_region and calculate_fare(), and overrides display_details()." vertex="1">
+          <mxGeometry height="60" width="520" x="165" y="500" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,11 +1,9 @@
-# Air New Zealand — Single Inheritance
+# Air New Zealand — Hybrid Inheritance (Simplified)
 
-Simple demo: `DomesticFlight` inherits from `Flight`.
-
-| Flight (parent) | DomesticFlight (subclass) |
-|---|---|
-| `flight_number`, `origin`, `destination`, `status` | `domestic_region` |
-| `display_details()`, `update_status()` | `calculate_fare()`, overridden `display_details()` |
+**Hybrid inheritance:**
+- Multilevel: `AirlineEntity` → `Flight`
+- Hierarchical: `Flight` → `DomesticFlight`, `InternationalFlight`
+- Multiple: both flight types also inherit `FareCalculable`
 
 Open `Air_New_Zealand_Class_Diagram.drawio` in [draw.io](https://app.diagrams.net/).
 

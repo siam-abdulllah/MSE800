@@ -1,29 +1,30 @@
-from flight import DomesticFlight, Flight
+from flight import DomesticFlight, Flight, InternationalFlight
 
 
 def main():
-    """Demonstrate single inheritance with an Air New Zealand domestic flight."""
-    print("Air New Zealand — Single Inheritance Demo\n")
+    print("Air New Zealand — Hybrid Inheritance Demo\n")
 
-    # Create a domestic flight (subclass)
-    flight = DomesticFlight("NZ101", "Auckland", "Wellington", "North Island")
+    # Domestic flight
+    domestic = DomesticFlight(
+        "NZ101", "Auckland", "Wellington", "North Island", 150, "23 kg", 1
+    )
+    print(f"Airline: {domestic.get_airline_name()}")  # inherited (multilevel)
+    domestic.update_status("Boarding")                  # inherited (hierarchical)
+    domestic.display_details()
+    print(f"Final fare: {domestic.calculate_fare()}")     # uses inherited ticket_price
+    print(f"{domestic.check_in()}\n")
 
-    # Use inherited attributes
-    print("Inherited attributes:")
-    print(f"  {flight.flight_number}, {flight.origin} → {flight.destination}")
+    # International flight
+    international = InternationalFlight(
+        "NZ8", "Auckland", "Los Angeles", "USA", 1200, "23 kg", 2
+    )
+    international.display_details()
+    print(f"Final fare: {international.calculate_fare()}")
+    print(f"{international.check_passport()}\n")
 
-    # Use inherited method
-    flight.update_status("Boarding")
-
-    # Use overridden method (shows inherited + domestic info)
-    print("\nFlight details:")
-    flight.display_details()
-
-    # Use domestic-only method
-    print(f"\nFare after discount: ${flight.calculate_fare(150)}")
-
-    # Confirm inheritance
-    print(f"\nIs DomesticFlight a Flight? {isinstance(flight, Flight)}")
+    # Inheritance checks
+    print(f"Domestic is Flight: {isinstance(domestic, Flight)}")
+    print(f"International is Flight: {isinstance(international, Flight)}")
 
 
 if __name__ == "__main__":
