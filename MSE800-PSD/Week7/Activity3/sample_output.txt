@@ -1,0 +1,104 @@
+Welcome to Office IoT Management System
+Office: MSE800 Smart Office
+Network: Connected
+Registered devices: 0/10
+
+1. Add smart device
+2. View all device status
+3. Control a device
+4. View system configuration
+5. Exit
+Choose an option (1-5): 1
+
+Device types: Smart Light, Smart Fan, Smart Air Conditioner
+Enter device type: Smart Light
+Enter device ID (e.g. L001): L001
+Enter location (e.g. Meeting Room A): Meeting Room A
+Brightness 0-100 (default 50): 80
+
+Device created: Smart Light
+[L001] Smart Light @ Meeting Room A - OFF, Brightness: 80%
+
+1. Add smart device
+2. View all device status
+3. Control a device
+4. View system configuration
+5. Exit
+Choose an option (1-5): 1
+
+Device types: Smart Light, Smart Fan, Smart Air Conditioner
+Enter device type: Smart Fan
+Enter device ID (e.g. L001): F001
+Enter location (e.g. Meeting Room A): Open Office
+Speed 1-5 (default 1): 3
+
+Device created: Smart Fan
+[F001] Smart Fan @ Open Office - OFF, Speed: 3/5
+
+1. Add smart device
+2. View all device status
+3. Control a device
+4. View system configuration
+5. Exit
+Choose an option (1-5): 1
+
+Device types: Smart Light, Smart Fan, Smart Air Conditioner
+Enter device type: Smart Air Conditioner
+Enter device ID (e.g. L001): AC001
+Enter location (e.g. Meeting Room A): Server Room
+Temperature 16-30°C (default 22): 20
+Mode Cool/Heat/Fan/Dry (default Cool): Cool
+
+Device created: Smart Air Conditioner
+[AC001] Smart Air Conditioner @ Server Room - OFF, 20°C, Mode: Cool
+
+1. Add smart device
+2. View all device status
+3. Control a device
+4. View system configuration
+5. Exit
+Choose an option (1-5): 2
+
+--- Office IoT Device Status ---
+  [L001] Smart Light @ Meeting Room A - OFF, Brightness: 80%
+  [F001] Smart Fan @ Open Office - OFF, Speed: 3/5
+  [AC001] Smart Air Conditioner @ Server Room - OFF, 20°C, Mode: Cool
+--------------------------------------------------
+
+1. Add smart device
+2. View all device status
+3. Control a device
+4. View system configuration
+5. Exit
+Choose an option (1-5): 3
+
+Enter device ID to control: L001
+
+Current: [L001] Smart Light @ Meeting Room A - OFF, Brightness: 80%
+1. Turn ON
+2. Turn OFF
+3. Adjust settings
+Choose action (1-3): 1
+Device turned ON.
+Updated: [L001] Smart Light @ Meeting Room A - ON, Brightness: 80%
+
+1. Add smart device
+2. View all device status
+3. Control a device
+4. View system configuration
+5. Exit
+Choose an option (1-5): 4
+
+--- System Configuration ---
+Office: MSE800 Smart Office
+Network: Connected
+Registered devices: 3/10
+--------------------------------------------------
+
+1. Add smart device
+2. View all device status
+3. Control a device
+4. View system configuration
+5. Exit
+Choose an option (1-5): 5
+Goodbye!
