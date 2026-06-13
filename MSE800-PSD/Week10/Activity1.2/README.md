@@ -89,3 +89,27 @@ python main.py
 3 | O |   |   |
   +---+---+---+
 ```
+
+## Code Quality
+
+Run [Pylint](https://pylint.readthedocs.io/) to check code style and conventions:
+
+```bash
+pylint main.py
+```
+
+Example output:
+
+```
+************* Module main
+main.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 9.17/10 (previous run: 9.30/10, -0.14)
+```
+
+To lint all project files:
+
+```bash
+pylint main.py board.py game.py ui.py
+```
