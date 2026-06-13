@@ -2,27 +2,35 @@
 
 from typing import Optional
 
-import board
-import ui
+from board import Board
+from player import Player
+from terminal import TerminalUI
 
 
-def play_game() -> Optional[board.Player]:
-    game_board = board.create_board()
-    current_player: board.Player = "X"
+class TicTacToeGame:
+    """Runs one Tic Tac Toe match between two players."""
 
-    while True:
-        ui.print_board(game_board)
-        row, col = ui.get_move(game_board, current_player)
-        board.apply_move(game_board, row, col, current_player)
+    def __init__(self, ui: TerminalUI) -> None:
+        self._ui = ui
 
-        if board.check_winner(game_board, current_player):
-            ui.print_board(game_board)
-            ui.announce_winner(current_player)
-            return current_player
+    def play(self) -> Optional[Player]:
+        """Play a single game and return the winner, or None for a draw."""
+        board = Board()
+        current_player = Player("X")
 
-        if board.is_draw(game_board):
-            ui.print_board(game_board)
-            ui.announce_draw()
-            return None
+        while True:
+            self._ui.display_board(board)
+            row, col = self._ui.prompt_move(board, current_player)
+            board.apply_move(row, col, current_player)
 
-        current_player = board.other_player(current_player)
+            if board.has_winner(current_player):
+                self._ui.display_board(board)
+                self._ui.announce_winner(current_player)
+                return current_player
+
+            if board.is_draw():
+                self._ui.display_board(board)
+                self._ui.announce_draw()
+                return None
+
+            current_player = current_player.other()

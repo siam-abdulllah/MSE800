@@ -1,30 +1,43 @@
 """Board state and win/draw rules for Tic Tac Toe."""
 
-Board = list[list[str]]
-Player = str
+from player import Player
 
 
-def create_board() -> Board:
-    return [[" " for _ in range(3)] for _ in range(3)]
+class Board:
+    """3x3 Tic Tac Toe board."""
 
+    SIZE = 3
 
-def check_winner(board: Board, player: Player) -> bool:
-    lines = (
-        *board,
-        [[board[r][c] for r in range(3)] for c in range(3)],
-        [board[i][i] for i in range(3)],
-        [board[i][2 - i] for i in range(3)],
-    )
-    return any(all(cell == player for cell in line) for line in lines)
+    def __init__(self) -> None:
+        self._cells = [
+            [" " for _ in range(self.SIZE)] for _ in range(self.SIZE)
+        ]
 
+    @property
+    def cells(self) -> list[list[str]]:
+        """Return the current board grid."""
+        return self._cells
 
-def is_draw(board: Board) -> bool:
-    return all(cell != " " for row in board for cell in row)
+    def is_empty(self, row: int, col: int) -> bool:
+        """Return True if the cell at row, col is unoccupied."""
+        return self._cells[row][col] == " "
 
+    def apply_move(self, row: int, col: int, player: Player) -> None:
+        """Place a player's symbol on the board."""
+        self._cells[row][col] = player.symbol
 
-def other_player(player: Player) -> Player:
-    return "O" if player == "X" else "X"
+    def has_winner(self, player: Player) -> bool:
+        """Return True if the given player has three in a row."""
+        grid = self._cells
+        symbol = player.symbol
+        lines = (
+            *grid,
+            *[[grid[r][c] for r in range(self.SIZE)] for c in range(self.SIZE)],
+            [grid[i][i] for i in range(self.SIZE)],
+            [grid[i][self.SIZE - 1 - i] for i in range(self.SIZE)],
+        )
+        return any(all(cell == symbol for cell in line) for line in lines)
 
-
-def apply_move(board: Board, row: int, col: int, player: Player) -> None:
-    board[row][col] = player
+    def is_draw(self) -> bool:
+        """Return True if the board is full with no winner."""
+        return all(cell != " " for row in self._cells for cell in row)

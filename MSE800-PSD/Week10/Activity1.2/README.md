@@ -1,67 +1,63 @@
 # Tic Tac Toe (Terminal)
 
-A two-player Tic Tac Toe game for the terminal, built with plain Python and decomposed into separate modules.
+A two-player Tic Tac Toe game for the terminal, built with plain Python using an object-oriented design.
 
-## Top-Down Design
+## Object-Oriented Design
 
-Top-down design breaks the program into smaller functions, starting from `main` at the top and working down to the lowest-level tasks. Arrows show which function calls or uses another.
+The program is split into classes, each with a single responsibility. Arrows show which class creates or uses another.
 
-### Top-Down Design Diagram
+### Class Diagram
 
 ```mermaid
 flowchart TD
-    main([main])
+    TicTacToeApp([TicTacToeApp])
+    TicTacToeGame([TicTacToeGame])
+    TerminalUI([TerminalUI])
+    Board([Board])
+    Player([Player])
 
-    play_game([play_game])
-    ask_play_again([ask_play_again])
+    TicTacToeApp --> TicTacToeGame
+    TicTacToeApp --> TerminalUI
+    TicTacToeGame --> TerminalUI
+    TicTacToeGame --> Board
+    TicTacToeGame --> Player
+    TerminalUI --> Board
+    TerminalUI --> Player
+    Board --> Player
 
-    create_board([create_board])
-    print_board([print_board])
-    get_move([get_move])
-    apply_move([apply_move])
-    check_winner([check_winner])
-    is_draw([is_draw])
-    other_player([other_player])
-    announce_winner([announce_winner])
-    announce_draw([announce_draw])
-
-    main --> play_game
-    main --> ask_play_again
-
-    play_game --> create_board
-    play_game --> print_board
-    play_game --> get_move
-    play_game --> apply_move
-    play_game --> check_winner
-    play_game --> is_draw
-    play_game --> other_player
-    play_game --> announce_winner
-    play_game --> announce_draw
+    TicTacToeApp -->|run| TicTacToeGame
+    TicTacToeApp -->|ask_play_again| TerminalUI
+    TerminalUI -->|yes| TicTacToeGame
 ```
 
 ### How to Read the Diagram
 
-| Level | Functions | File |
-|-------|-----------|------|
-| 1 | `main` | `main.py` |
-| 2 | `play_game` | `game.py` |
-| 2 | `ask_play_again`, `print_board`, `get_move`, `announce_winner`, `announce_draw` | `ui.py` |
-| 3 | `create_board`, `apply_move`, `check_winner`, `is_draw`, `other_player` | `board.py` |
+| Class | Responsibility | File |
+|-------|----------------|------|
+| `TicTacToeApp` | Entry point, welcome/goodbye, replay loop | `main.py` |
+| `TicTacToeGame` | Single-match game loop | `game.py` |
+| `TerminalUI` | Board display, input, and messages | `terminal.py` |
+| `Board` | Grid state, moves, win/draw checks | `board.py` |
+| `Player` | Player symbol and turn switching | `player.py` |
+
+After each game, `TicTacToeApp` calls `ask_play_again`. If the player chooses **yes**, `TicTacToeGame.play()` runs again for a new match.
 
 ### Design Benefits
 
-- **Maintainable** — each file has one clear role
-- **Scalable** — new features (e.g. AI opponent) can be added without changing unrelated code
-- **Easy to read** — follow the arrows from `main` down to see how the program is built step by step
+- **Encapsulation** — board state and rules live inside `Board`
+- **Maintainable** — each class has one clear role
+- **Scalable** — new features (e.g. AI opponent) can be added as new classes without changing unrelated code
+- **Easy to test** — game logic can be tested separately from terminal I/O
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `main.py` | Entry point and replay loop |
-| `game.py` | Single-match game loop |
-| `ui.py` | Board display, input, and messages |
-| `board.py` | Board state, moves, and win/draw rules |
+| `main.py` | `TicTacToeApp` entry point and replay loop |
+| `game.py` | `TicTacToeGame` single-match logic |
+| `terminal.py` | `TerminalUI` display and input |
+| `board.py` | `Board` grid and rules |
+| `player.py` | `Player` symbol and turn switching |
 
 ## Run
 
@@ -98,18 +94,8 @@ Run [Pylint](https://pylint.readthedocs.io/) to check code style and conventions
 pylint main.py
 ```
 
-Example output:
-
-```
-************* Module main
-main.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
-
-------------------------------------------------------------------
-Your code has been rated at 9.17/10 (previous run: 9.30/10, -0.14)
-```
-
 To lint all project files:
 
 ```bash
-pylint main.py board.py game.py ui.py
+pylint main.py board.py player.py game.py terminal.py
 ```
