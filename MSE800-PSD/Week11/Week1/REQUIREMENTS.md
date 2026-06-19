@@ -125,12 +125,3 @@ The prototype is considered **release-ready** when:
 2. **Sprint 2 complete:** Nearby search returns relevant listings (FR-12); matched users chat and leave ratings (FR-14 – FR-18); report and block flows work (FR-19 – FR-20).
 3. **Release Sprint complete:** Staging deployment is live (NFR-14); UAT checklist passes (FR-29); all **Must** non-functional requirements are demonstrated; automated test suite passes with ≥ 30 tests (NFR-12); release notes and demo script are published.
 
----
-
-## 9. Related Documents
-
-| Document | Purpose |
-|----------|---------|
-| [PROJECT_PLAN.md](./PROJECT_PLAN.md) | Detailed 3-sprint agile backlog and activity log |
-| [FUNCTIONAL_AND_NON_FUNCTIONAL_REQUIREMENTS.md](./FUNCTIONAL_AND_NON_FUNCTIONAL_REQUIREMENTS.md) | GeeksforGeeks-classified requirements reference |
-| [Proposal.rtf](./Proposal.rtf) | Original project proposal |
