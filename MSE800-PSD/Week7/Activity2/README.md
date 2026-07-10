@@ -24,7 +24,13 @@ Each fish has **category**, **color**, and **type**. The user enters all three w
 
 ### Singleton Pattern (`database.py`)
 
-The `Database` class ensures only one SQLite connection exists for the entire application. Every call to `Database()` returns the same instance, so all fish counts are stored and read through one shared connection.
+The `Database` class uses the **Singleton pattern** via `get_instance()`. Only one SQLite connection is created and reused. Call `db.close()` when exiting to release the connection properly.
+
+```python
+db = Database.get_instance()
+# ... use the app ...
+db.close()
+```
 
 ## Project Structure
 

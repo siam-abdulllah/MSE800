@@ -5,15 +5,18 @@ DB_FILE = "aquarium.db"
 
 
 class Database:
-    """Singleton — only one Database object is created for the whole app."""
+    """Singleton — use get_instance() to get the one shared database object."""
 
     _instance = None
 
-    def __new__(cls):
+    def __init__(self):
+        self.conn = sqlite3.connect(DB_FILE)
+        self._setup_database()
+
+    @classmethod
+    def get_instance(cls):
         if cls._instance is None:
-            cls._instance = super().__new__(cls)
-            cls._instance.conn = sqlite3.connect(DB_FILE)
-            cls._instance._setup_database()
+            cls._instance = cls()
         return cls._instance
 
     def _setup_database(self):
@@ -57,3 +60,8 @@ class Database:
         if row:
             return row[0]
         return 0
+
+    def close(self):
+        if self.conn is not None:
+            self.conn.close()
+            self.conn = None

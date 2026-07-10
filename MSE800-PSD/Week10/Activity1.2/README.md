@@ -1,53 +1,59 @@
 # Tic Tac Toe (Terminal)
 
-A two-player Tic Tac Toe game for the terminal, built with plain Python using an object-oriented design.
+A two-player Tic Tac Toe game for the terminal, built with plain Python and decomposed into separate modules.
 
-## Object-Oriented Design
+## Top-Down Design
 
-The program is split into classes, each with a single responsibility. Arrows show which class creates or uses another.
+Top-down design breaks the program into smaller parts, starting from `run` at the top and working down to the lowest-level tasks. Arrows show which part calls or uses another.
 
-### Class Diagram
+### Top-Down Design Diagram
 
 ```mermaid
 flowchart TD
-    TicTacToeApp([TicTacToeApp])
-    TicTacToeGame([TicTacToeGame])
-    TerminalUI([TerminalUI])
-    Board([Board])
-    Player([Player])
+    run([run])
 
-    TicTacToeApp --> TicTacToeGame
-    TicTacToeApp --> TerminalUI
-    TicTacToeGame --> TerminalUI
-    TicTacToeGame --> Board
-    TicTacToeGame --> Player
-    TerminalUI --> Board
-    TerminalUI --> Player
-    Board --> Player
+    play([play])
+    ask_play_again([ask_play_again])
 
-    TicTacToeApp -->|run| TicTacToeGame
-    TicTacToeApp -->|ask_play_again| TerminalUI
-    TerminalUI -->|yes| TicTacToeGame
+    apply_move([apply_move])
+    display_board([display_board])
+    prompt_move([prompt_move])
+    has_winner([has_winner])
+    is_draw([is_draw])
+    other([other])
+    announce_winner([announce_winner])
+    announce_draw([announce_draw])
+
+    run --> play
+    run --> ask_play_again
+    ask_play_again -->|yes| play
+
+    play --> apply_move
+    play --> display_board
+    play --> prompt_move
+    play --> has_winner
+    play --> is_draw
+    play --> other
+    play --> announce_winner
+    play --> announce_draw
 ```
 
 ### How to Read the Diagram
 
-| Class | Responsibility | File |
-|-------|----------------|------|
-| `TicTacToeApp` | Entry point, welcome/goodbye, replay loop | `main.py` |
-| `TicTacToeGame` | Single-match game loop | `game.py` |
-| `TerminalUI` | Board display, input, and messages | `terminal.py` |
-| `Board` | Grid state, moves, win/draw checks | `board.py` |
-| `Player` | Player symbol and turn switching | `player.py` |
+| Level | Methods | File |
+|-------|---------|------|
+| 1 | `run` | `main.py` |
+| 2 | `play`, `ask_play_again` | `game.py` / `terminal.py` |
+| 3 | `display_board`, `prompt_move`, `announce_winner`, `announce_draw` | `terminal.py` |
+| 4 | `apply_move`, `has_winner`, `is_draw`, `other` | `board.py` / `player.py` |
 
-After each game, `TicTacToeApp` calls `ask_play_again`. If the player chooses **yes**, `TicTacToeGame.play()` runs again for a new match.
+After each game, `run` calls `ask_play_again`. If the player chooses **yes**, the flow returns to `play` and starts a new match.
 
 ### Design Benefits
 
-- **Encapsulation** — board state and rules live inside `Board`
-- **Maintainable** — each class has one clear role
-- **Scalable** — new features (e.g. AI opponent) can be added as new classes without changing unrelated code
-- **Easy to test** — game logic can be tested separately from terminal I/O
+- **Maintainable** — each file has one clear role
+- **Scalable** — new features (e.g. AI opponent) can be added without changing unrelated code
+- **Easy to read** — follow the arrows from `run` down to see how the program is built step by step
 
 ## Files
 

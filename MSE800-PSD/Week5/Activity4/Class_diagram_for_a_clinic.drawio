@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="GPT-5.5">
   <diagram id="clinic-class-diagram" name="Clinic Class Diagram">
-    <mxGraphModel dx="1607" dy="1028" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1080" math="0" shadow="0">
+    <mxGraphModel dx="771" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1080" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -57,8 +57,11 @@
             <mxPoint x="-8" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ePatientAppointment" edge="1" parent="1" source="patient" style="edgeStyle=none;rounded=0;html=1;endArrow=none;startArrow=none;" target="appointment" value="books">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ePatientAppointment" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=none;startArrow=none;" value="books">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="218" as="sourcePoint" />
+            <mxPoint x="800" y="218" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="m-ePatientAppointment-src" connectable="0" parent="ePatientAppointment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1" value="1" vertex="1">
           <mxGeometry relative="1" x="-0.88" y="-2" as="geometry">

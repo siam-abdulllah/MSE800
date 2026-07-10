@@ -1,20 +1,20 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0">
   <diagram id="cust-money" name="Customer money services">
-    <mxGraphModel dx="1205" dy="729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1205" dy="729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="840" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="d1_purpose" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#FFF4CC;strokeColor=#C9A227;fontSize=11;spacing=10;spacingLeft=12;spacingTop=10;spacingRight=10;spacingBottom=10;fontColor=#333333;" value="&lt;b&gt;Purpose&lt;/b&gt;&lt;br&gt;This diagram models what &lt;b&gt;end customers&lt;/b&gt; do in the Money Exchange application: their relationship to accounts (&lt;i&gt;ACC_CUST&lt;/i&gt;), viewing balances, executing transactions in a chosen currency, and reviewing history aligned with &lt;i&gt;TRANSACTION_LOG&lt;/i&gt; and &lt;i&gt;CURRENCY&lt;/i&gt;." vertex="1">
           <mxGeometry height="88" width="1120" x="20" y="20" as="geometry" />
         </mxCell>
-        <mxCell id="d1_actors_note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#E8F4FC;strokeColor=#6B9BD1;fontSize=11;spacing=10;spacingLeft=12;spacingTop=10;spacingRight=10;spacingBottom=10;fontColor=#333333;" value="&lt;b&gt;Key actors&lt;/b&gt;&lt;br&gt;&lt;b&gt;Customer&lt;/b&gt; — primary human user of self-service banking and exchange.&lt;br&gt;&lt;b&gt;External Rate Provider&lt;/b&gt; (&amp;laquo;System&amp;raquo;) — external system supplying reference rates the app may display before a customer confirms an exchange." vertex="1">
+        <mxCell id="d1_actors_note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#E8F4FC;strokeColor=#6B9BD1;fontSize=11;spacing=10;spacingLeft=12;spacingTop=10;spacingRight=10;spacingBottom=10;fontColor=#333333;" value="&lt;b&gt;Key actors&lt;/b&gt;&lt;br&gt;&lt;b&gt;Customer&lt;/b&gt; — primary human user of self-service banking and exchange.&lt;br&gt;&lt;b&gt;Bank Administrator&lt;/b&gt; — completes back-office steps when a customer needs an account linked or unlinked (&lt;i&gt;ACC_CUST&lt;/i&gt;).&lt;br&gt;&lt;b&gt;External Rate Provider&lt;/b&gt; (&amp;laquo;System&amp;raquo;) — external system supplying reference rates the app may display before a customer confirms an exchange." vertex="1">
           <mxGeometry height="78" width="1120" x="20" y="118" as="geometry" />
         </mxCell>
-        <mxCell id="d1_scenario" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#EAF9EE;strokeColor=#62A86F;fontSize=10;spacing=8;spacingLeft=10;spacingTop=8;spacingRight=8;spacingBottom=8;fontColor=#2D4730;" value="&lt;b&gt;Short scenario&lt;/b&gt;&lt;br&gt;1) Customer authenticates.&lt;br&gt;2) Customer requests an exchange quote.&lt;br&gt;3) System validates source balance and executes the exchange.&lt;br&gt;4) System records the transaction and sends confirmation.&lt;br&gt;5) Customer later checks transaction history." vertex="1">
-          <mxGeometry height="220" width="260" x="20" y="224" as="geometry" />
+        <mxCell id="d1_scenario" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#EAF9EE;strokeColor=#62A86F;fontSize=10;spacing=8;spacingLeft=10;spacingTop=8;spacingRight=8;spacingBottom=8;fontColor=#2D4730;" value="&lt;b&gt;Short scenario&lt;/b&gt;&lt;br&gt;1) Customer authenticates.&lt;br&gt;2) Customer requests an exchange quote.&lt;br&gt;3) System validates source balance and executes the exchange.&lt;br&gt;4) System records the transaction and sends confirmation.&lt;br&gt;5) Customer later checks transaction history.&lt;br&gt;6) If needed, customer requests account linking; administrator completes &lt;i&gt;ACC_CUST&lt;/i&gt; setup." vertex="1">
+          <mxGeometry height="248" width="260" x="20" y="224" as="geometry" />
         </mxCell>
         <mxCell id="d1_boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacingTop=8;fillColor=#F0F7FF;strokeColor=#4A7EB5;strokeWidth=2;dashed=1;dashPattern=10 10;fontStyle=1;fontSize=12;" value="Money Exchange System&#xa;(Customer boundary)" vertex="1">
-          <mxGeometry height="520" width="820" x="300" y="210" as="geometry" />
+          <mxGeometry height="560" width="820" x="300" y="210" as="geometry" />
         </mxCell>
         <mxCell id="d1_uc_auth" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" value="Authenticate" vertex="1">
           <mxGeometry height="60" width="150" x="360" y="260" as="geometry" />
@@ -34,6 +34,9 @@
         <mxCell id="d1_uc_prof" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" value="Update contact profile" vertex="1">
           <mxGeometry height="60" width="170" x="360" y="540" as="geometry" />
         </mxCell>
+        <mxCell id="d1_uc_link_req" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" value="Request account linking&#xa;or unlink (ACC_CUST)" vertex="1">
+          <mxGeometry height="68" width="200" x="600" y="530" as="geometry" />
+        </mxCell>
         <mxCell id="d1_uc_balchk" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontSize=11;" value="Validate source&#xa;account balance" vertex="1">
           <mxGeometry height="66" width="180" x="860" y="360" as="geometry" />
         </mxCell>
@@ -45,6 +48,9 @@
         </mxCell>
         <mxCell id="d1_act_rates" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=default;fontSize=10;" value="External&#xa;Rate Provider&#xa;«System»" vertex="1">
           <mxGeometry height="90" width="50" x="90" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_act_admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=default;fontSize=10;" value="Bank&#xa;Administrator" vertex="1">
+          <mxGeometry height="85" width="45" x="1140" y="400" as="geometry" />
         </mxCell>
         <mxCell id="d1_e1" edge="1" parent="1" source="d1_act_cust" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="d1_uc_auth">
           <mxGeometry relative="1" as="geometry" />
@@ -62,6 +68,12 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="d1_e6" edge="1" parent="1" source="d1_act_cust" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="d1_uc_prof">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_e6b" edge="1" parent="1" source="d1_act_cust" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.92;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="d1_uc_link_req">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d1_e_admin_link" edge="1" parent="1" source="d1_act_admin" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="d1_uc_link_req">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="d1_e7" edge="1" parent="1" source="d1_act_rates" style="endArrow=open;endFill=0;dashed=1;html=1;dashPattern=2 4;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;fontStyle=2;" target="d1_uc_quote" value="«reference rates»">

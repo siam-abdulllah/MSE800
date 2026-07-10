@@ -55,7 +55,7 @@ def add_fish(db):
 
 
 def main():
-    db = Database()
+    db = Database.get_instance()
     print("Welcome to Auckland Aquarium Management System")
 
     while True:
@@ -68,6 +68,7 @@ def main():
             display_inventory(db)
         elif choice == "3":
             print("Goodbye!")
+            db.close()
             break
         else:
             print("Invalid option. Please enter 1, 2, or 3.")

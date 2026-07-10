@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 /tmp/add_readme_slides.py)",
+      "Bash(python3)"
+    ]
+  }
+}
